@@ -452,7 +452,7 @@ func (cache *EC2InstanceMetadataCache) RefreshSGIDs(mac string) error {
 	}
 	cache.securityGroups.Set(sgIDs)
 
-	if !cache.useCustomNetworking && (addedSGsCount != 0 || deletedSGsCount != 0) {
+	if (false) {
 		allENIs, err := cache.GetAttachedENIs()
 		if err != nil {
 			return errors.Wrap(err, "DescribeAllENIs: failed to get local ENI metadata")
